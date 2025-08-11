@@ -77,14 +77,14 @@ APP.CORS.AllowCredentials = true
 // Get cookie using the GetCookie method on Req struct
 c, err := req.GetCookie(cookieName)
 
-// Deleting a cookie
-req.DeleteCookie(cookieName)
+// Delete a cookie using the DeleteCookie method on Res struct
+res.DeleteCookie(cookieName)
 
-// Set cookie using the SetCookie method on Req struct with default options
-req.SetCookie(cookieName, cookieValue, nil)
+// Set cookie using the SetCookie method on Res struct with default options
+res.SetCookie(cookieName, cookieValue, nil)
 
-// Set cookie using the SetCookie method on Req struct with your own options
-req.SetCookie(cookieName, cookieValue, &zapi.CookieOptions{...})
+// Set cookie using the SetCookie method on Res struct with your own options
+res.SetCookie(cookieName, cookieValue, &zapi.CookieOptions{...})
 
 // All options available
 type CookieOptions struct {
