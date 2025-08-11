@@ -9,8 +9,6 @@ package main
 
 import (
     "fmt"
-    "os"
-	"path"
     "github.com/DebAxom/Zapi"
 )
 
