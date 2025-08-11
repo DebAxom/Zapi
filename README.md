@@ -25,7 +25,6 @@ func main() {
     fmt.Println("Server running on http://localhost:3000")
     App.run(":3000") // Running the server on port 3000
 }
-
 ```
 
 ### Methods
@@ -45,13 +44,13 @@ App.Delete(route, handlerFunc) // Handle DELETE Request
     // Parameterized Routes
     App.Get("/blog/[id]", func(req *zapi.Req, res zapi.Res){ 
         id := req.Params["id"]
-        ....
+        // Do something ...
     })
 
     App.Get("/@[username]/p-[id]", func(req *zapi.Req, res zapi.Res){ 
         username := req.Params["username"]
         id := req.Params["id"]
-        ....
+        // Do something ...
     })
 
     // Handling 404 ; This route should be at the end of all routes
@@ -59,7 +58,6 @@ App.Delete(route, handlerFunc) // Handle DELETE Request
         res.WriteHeader(404)
         res.Write("404 Not Found !")
     })
-
 ```
 
 ### Req struct
@@ -148,7 +146,6 @@ App.Get("/user", func(req *zapi.Req, res zapi.Res) {
 
 ### Getting JSON data from Body
 ```go
-
 type Auth struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
